@@ -1,41 +1,25 @@
-//const botonAdd = document.getElementById('botonAdd');
+// Obtener referencia al elemento de lista HTML
+var lista = document.getElementById("miTabla");
 
-//botonAdd.addEventListener('click', añadiraALista());
-
-//const añadiraALista = () => {
-    
-
-//};
-
-let gastos = [];
-
-function agregarGasto(event) {
-  event.preventDefault();
-  let nombre = document.getElementById('gasto').value;
-  let monto = parseFloat(document.getElementById('monto').value);
-  gastos.push({nombre: nombre, monto: monto});
-  actualizarGastos();
-  actualizarSaldo();
-  document.getElementById('gasto').value = '';
-  document.getElementById('monto').value = '';
+// Función para agregar un nuevo elemento a la lista
+function agregarElemento() {
+  // Crear un nuevo elemento de lista y asignar su contenido
+  var nuevoElemento = document.createElement("tbody");
+  nuevoElemento.textContent = "Nuevo elemento";
+  
+  // Agregar el nuevo elemento a la lista
+  lista.appendChild(nuevoElemento);
 }
 
-document.querySelector('form').addEventListener('submit', agregarGasto);
-
-function actualizarGastos() {
-    let lista = '';
-    for (let i = 0; i < gastos.length; i++) {
-      lista += gastos[i].nombre + ': $' + gastos[i].monto.toFixed(2) + '<br>';
-    }
-    document.getElementById('gastos').innerHTML = lista;
-  }
-
-  function actualizarSaldo() {
-    let total = 0;
-    for (let i = 0; i < gastos.length; i++) {
-      total += gastos[i].monto;
-    }
-    let saldo = 1000 - total;
-    document.getElementById('saldo').innerHTML = 'Saldo final: $' + saldo.toFixed(2);
-  }
+// Función para eliminar el último elemento de la lista
+function eliminarElemento() {
+  // Obtener la cantidad de elementos de la lista
+  var cantidadElementos = lista.getElementsByTagName("tbody").length;
   
+  // Verificar si hay elementos en la lista para eliminar
+  if (cantidadElementos > 0) {
+    // Obtener el último elemento de la lista y eliminarlo
+    var ultimoElemento = lista.getElementsByTagName("tbody")[cantidadElementos - 1];
+    lista.removeChild(ultimoElemento);
+  }
+}

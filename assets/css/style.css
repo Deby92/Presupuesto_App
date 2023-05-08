@@ -14,3 +14,7 @@ body {
 .container_2alert{
     max-width: 450px;
 }
+
+.table-striped{
+    max-width: 1000px;
+}
