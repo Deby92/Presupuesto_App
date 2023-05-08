@@ -1,0 +1,16 @@
+*{
+    font-family: 'Chakra Petch', sans-serif;
+
+}
+body {
+    background: linear-gradient(to bottom, #283048, #859398);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container_alert{
+    max-width: 450px;
+}
+
+.container_2alert{
+    max-width: 450px;
+}
