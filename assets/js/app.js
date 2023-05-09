@@ -1,25 +1,48 @@
-// Obtener referencia al elemento de lista HTML
-var lista = document.getElementById("miTabla");
 
-// Función para agregar un nuevo elemento a la lista
-function agregarElemento() {
-  // Crear un nuevo elemento de lista y asignar su contenido
-  var nuevoElemento = document.createElement("tbody");
-  nuevoElemento.textContent = "Nuevo elemento";
-  
-  // Agregar el nuevo elemento a la lista
-  lista.appendChild(nuevoElemento);
-}
+  // Variable global para almacenar el presupuesto
+  var presupuesto = 0;
 
-// Función para eliminar el último elemento de la lista
-function eliminarElemento() {
-  // Obtener la cantidad de elementos de la lista
-  var cantidadElementos = lista.getElementsByTagName("tbody").length;
-  
-  // Verificar si hay elementos en la lista para eliminar
-  if (cantidadElementos > 0) {
-    // Obtener el último elemento de la lista y eliminarlo
-    var ultimoElemento = lista.getElementsByTagName("tbody")[cantidadElementos - 1];
-    lista.removeChild(ultimoElemento);
+  function agregarPresup() {
+    // Obtener el valor del input de presupuesto
+    var inputPresup = document.getElementById("inputPresup").value;
+    
+    // Convertir el valor del input a un número
+    var presupuestoNumerico = parseInt(inputPresup);
+    
+    // Asignar el presupuesto a la variable global
+    presupuesto = presupuestoNumerico;
+    
+    // Mostrar el presupuesto en la página
+    document.getElementById("presupuesto").innerHTML = "Presupuesto: $" + presupuesto;
   }
-}
+
+  function btnAgregarGasto() {
+    // Obtener los valores del input de gasto
+    var inputGasto = document.getElementById("inputGasto").value;
+    var montoGasto = document.getElementById("montoGastoInput").value;
+    
+    // Convertir el valor del monto de gasto a un número
+    var montoNumerico = parseInt(montoGasto);
+    
+    // Restar el monto del gasto del presupuesto
+    presupuesto -= montoNumerico;
+    
+    // Mostrar el presupuesto actualizado en la página
+    document.getElementById("presupuesto").innerHTML = "Presupuesto: $" + presupuesto;
+    
+    // Mostrar el gasto en la lista de gastos
+    var listaGastos = document.getElementById("listaGastos");
+    listaGastos.innerHTML += "<li>" + inputGasto + " - $" + montoGasto + "</li>";
+  }
+
+  function btnEliminarPresup() {
+    // Reiniciar el presupuesto a cero
+    presupuesto = 0;
+    
+    // Mostrar el presupuesto en la página
+    document.getElementById("presupuesto").innerHTML = "Presupuesto: $" + presupuesto;
+    
+    // Limpiar la lista de gastos
+    var listaGastos = document.getElementById("listaGastos");
+    listaGastos.innerHTML = "";
+  }
