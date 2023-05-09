@@ -32,7 +32,7 @@ function btnAgregarGasto() {
 
   // Mostrar el gasto en la lista de gastos
   var listaGastos = document.getElementById("listaGastos");
-  listaGastos.innerHTML += "<li>" + inputGasto + " - $" + montoGasto + "</li>";
+  listaGastos.innerHTML += "<ol>" + inputGasto + ": $" + montoGasto + "</ol>";
 }
 
 function btnEliminarPresup() {
