@@ -21,14 +21,19 @@
   </h1>
   <table class="table table-striped table-warning rounded border-warning m-3" id="miTabla">
     <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col" id="colPresup">Presupuesto</th>
-        <th scope="col" id="colGasto">Gasto</th>
-        <th scope="col" id="colSaldo">Saldo</th>
+      <tr> 
+        <th scope="col">Presupuesto</th>
+        <th scope="col">Gasto</th>
+        <th scope="col">Saldo</th>
       </tr>
     </thead>
     <tbody class="table-group-divider">
+      <tr>
+        <td id="presupuesto"></td>
+        <td id="listaGastos"></td>
+        <td id="saldo"></td>
+      </tr>
+      <tr>
     </tbody>
   </table>
   <div class="container_alert alert alert-success m-3 shadow-lg p-3 mb-5 rounded border-success">
@@ -36,7 +41,7 @@
     <div class="input">
       <input class="container alert alert-success rounded mt-2 p-0 m-1" type="number" id="inputPresup" />
     </div>
-    <button type="submit" class="btn btn-outline-success mt-3" id="presupuesto" onclick="agregarPresup()">
+    <button type="submit" class="btn btn-outline-success mt-3" onclick="agregarPresup()">
       Calcular
     </button>
   </div>
@@ -50,7 +55,7 @@
       Ingresa el monto del Gasto:
       <input class="container alert alert-danger rounded mt-2 p-0 m-1" type="number" id="montoGastoInput" />
     </div>
-    <button type="submit" class="btn btn-outline-danger mt-3" id="listaGastos" onclick="btnAgregarGasto()">
+    <button type="submit" class="btn btn-outline-danger mt-3" id="" onclick="btnAgregarGasto()">
       Agregar Gasto
     </button>
   </div>
