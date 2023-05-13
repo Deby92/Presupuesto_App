@@ -67,7 +67,7 @@ function btnAgregarGasto() {
 
   // Crear un botón para eliminar el gasto
   var botonEliminar = document.createElement("buttonIcon");
-  botonEliminar.innerHTML = `<i class="fa fa-trash-can fa-xs"></i>`;
+  botonEliminar.innerHTML = `<i class="fa fa-trash-can fa-fade fa-xs"></i>`;
   botonEliminar.onclick = function() {
     // Restar el monto del gasto eliminado del presupuesto
     presupuesto += montoNumerico;
